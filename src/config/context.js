@@ -1,5 +1,5 @@
-const api = require('./services/api');
-const { AuthenticationError } = require('./model/Error');
+const api = require('../services/api');
+const { AuthenticationError } = require('../model/Error');
 
 module.exports = async ({ req }) => {
   // get the user token from the headers
