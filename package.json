@@ -1,0 +1,20 @@
+{
+  "name": "api-apollo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.6.4",
+    "apollo-server": "^2.9.3",
+    "graphql": "^14.5.4",
+    "json-server": "^0.15.1",
+    "lodash": "^4.17.15"
+  }
+}
