@@ -1,4 +1,14 @@
 {
+  "auth": {
+    "token": {
+      "accessToken": "20c1df79-8183-4c15-9b45-a0363da238a0",
+      "refreshToken": "20c1df79-8183-4c15-9b45-a0363da238a0"
+    },
+    "user": {
+      "id": "a127b840-0a52-4ca6-93af-aa9d7c45608b",
+      "name": "Alex Tavella"
+    }
+  },
   "stock": [
     {
       "id": 1,

@@ -3,26 +3,26 @@ const { gql } = require('apollo-server');
 module.exports = gql`
   type Book {
     id: ID!
-    title: String
-    author: Author
+    title: String!
+    author: Author!
   }
 
   type Author {
     id: ID!
-    name: String
-    books: [Book]
+    name: String!
+    books: [Book]!
   }
 
   type Product {
     id: ID!
-    title: String
-    price: Float
+    title: String!
+    price: Float!
     image: String
   }
 
   type Stock {
-    product: Product
-    amount: Int
+    product: Product!
+    amount: Int!
   }
 
   # The "Query" type is the root of all GraphQL queries.
@@ -37,5 +37,9 @@ module.exports = gql`
 
     authors: [Author]
     author(id: Int): Author
+  }
+
+  type Mutation {
+    addBook(title: String, author: Int!): Book
   }
 `;

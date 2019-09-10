@@ -20,11 +20,11 @@ module.exports.authors = [
   {
     id: 1,
     name: 'J.K. Rowling',
-    books: [1]
+    books: [1],
   },
   {
-    id: '2',
+    id: 2,
     name: 'Michael Crichton',
-    books: [2]
-  }
-]
+    books: [2],
+  },
+];

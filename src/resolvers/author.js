@@ -14,6 +14,6 @@ const resolvers = {
       return filter(books, { author: author.id });
     },
   },
-}
+};
 
 module.exports = resolvers;

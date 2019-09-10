@@ -9,5 +9,5 @@ module.exports = merge(
   authorResolver,
   bookResolver,
   productResolver,
-  stockResolver
+  stockResolver,
 );
