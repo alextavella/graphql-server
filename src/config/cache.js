@@ -1,4 +1,5 @@
 const { RedisCache } = require('apollo-server-cache-redis');
+const { redis } = require('../config/env');
 
 module.exports = new RedisCache({
   connectTimeout: 5000,
@@ -19,9 +20,7 @@ module.exports = new RedisCache({
     return delay;
   },
   socket_keepalive: false,
-  host: process.env.REDIS_HOST || 'localhost',
-  port: process.env.REDIS_PORT
-    ? parseInt(process.env.REDIS_PORT, 10)
-    : 6379,
+  host: redis.host,
+  port: redis.port,
   password: process.env.REDIS_PASSWORD || '',
 });

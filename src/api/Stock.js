@@ -1,9 +1,10 @@
 const { RESTDataSource } = require('apollo-datasource-rest');
+const { api } = require('../config/env');
 
 class StockAPI extends RESTDataSource {
   constructor() {
     super();
-    this.baseURL = 'http://localhost:3333/stock';
+    this.baseURL = `${api.baseURL}/stock`;
   }
 
   async getByProductId(id) {
