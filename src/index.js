@@ -2,6 +2,7 @@ const { ApolloServer } = require('apollo-server');
 
 const typeDefs = require('./config/types');
 const context = require('./config/context');
+const cache = require('./config/cache');
 
 const resolvers = require('./resolvers');
 const dataSources = require('./api');
@@ -11,6 +12,7 @@ const server = new ApolloServer({
   resolvers,
   dataSources,
   context,
+  cache,
   playground: true,
 });
 

@@ -1,9 +1,13 @@
 GraphQL
 
-This project using other server in background, you should run:
+For API, you can run:
 
-### `npx json-server server.json -p 3333 --nc -d 1000`
+### `npx json-server server.json -p 3333`
+
+For App, you can run:
+
+### `npm start`
 
 In the project directory, you can run:
 
-### `npm start`
+### `docker-compose up -d --build`
