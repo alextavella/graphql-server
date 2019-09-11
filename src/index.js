@@ -13,6 +13,12 @@ const server = new ApolloServer({
   dataSources,
   context,
   cache,
+  tracing: true,
+  cacheControl: {
+    defaultMaxAge: 3000,
+    stripFormattedExtensions: false,
+    calculateCacheControlHeaders: false,
+  },
   playground: true,
 });
 

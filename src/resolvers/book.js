@@ -1,28 +1,24 @@
-const { find } = require('lodash');
-
-const { books, authors } = require('../db');
+const { filter } = require('lodash');
 
 const resolvers = {
   Query: {
-    books: () => books,
-    book(parent, args, context, info) {
-      return find(books, { id: args.id });
-    },
+    books: async (_, __, { dataSources }) => dataSources.bookAPI.list(),
+    book: async (_, { id }, { dataSources }) => dataSources.bookAPI.getById(id),
   },
   Mutation: {
-    addBook: (parent, args, context, info) => {
-      console.log('Creating book:', args);
-
-      const { title, author } = args;
-      const result = { title, author };
-
-      console.log('result', result);
-      return result;
+    addBook: (_, args, { dataSources }, info) => {
+      const payload = args;
+      return dataSources.bookAPI.create({ payload });
+    },
+    removeBook: (_, { id }, { dataSources }) => {
+      dataSources.bookAPI.remove(id);
+      return { status: 'OK' };
     },
   },
   Book: {
-    author(book) {
-      return find(authors, { id: book.author });
+    async author(book, _, { dataSources }) {
+      const authors = await dataSources.authorAPI.list();
+      return filter(authors, (author) => author.books.indexOf(book.id) >= 0);
     },
   },
 };

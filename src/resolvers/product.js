@@ -1,7 +1,7 @@
 const resolvers = {
   Query: {
-    product: async (_source, { id }, { dataSources }) => dataSources.productAPI.getById(id),
-    products: async (_source, args, { dataSources }) => dataSources.productAPI.list(),
+    product: async (_, { id }, { dataSources }, info) => dataSources.productAPI.getById(id),
+    products: async (_, __, { dataSources }, info) => dataSources.productAPI.list(),
   },
 };
 

@@ -1,6 +1,6 @@
 module.exports = {
   api: {
-    baseURL: process.env.API_BASE_URL || 'localhost:3333',
+    baseURL: process.env.API_BASE_URL || 'http://localhost:3333',
   },
   redis: {
     host: process.env.REDIS_HOST || 'localhost',
