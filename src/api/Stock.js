@@ -1,4 +1,4 @@
-const { RESTDataSource, RequestOptions } = require('apollo-datasource-rest');
+const { RESTDataSource } = require('apollo-datasource-rest');
 const { api } = require('../config/env');
 
 class StockAPI extends RESTDataSource {

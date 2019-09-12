@@ -71,49 +71,24 @@
       "price": 229.9,
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis3.jpg",
       "id": 6
-    }
-  ],
-  "books": [
-    {
-      "id": 1,
-      "title": "Harry Potter and the Chamber of Secrets"
     },
     {
-      "id": 2,
-      "title": "Jurassic Park"
+      "title": "Tenis maneiro",
+      "price": 999.99,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg",
+      "id": 7
     },
     {
-      "id": 3,
-      "title": "Jurassic Park The Origin"
-    }
-  ],
-  "authors": [
-    {
-      "id": 1,
-      "name": "J.K. Rowling",
-      "books": [
-        1
-      ]
+      "title": "asd",
+      "price": 999.99,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg",
+      "id": 9
     },
     {
-      "id": 2,
-      "name": "Michael Crichton",
-      "books": [
-        2
-      ]
-    },
-    {
-      "name": "Alex Tavella",
-      "books": [
-        1,
-        2
-      ],
-      "id": 3
-    },
-    {
-      "name": "Teste 2",
-      "books": [],
-      "id": 4
+      "title": "Tenis maneiro",
+      "price": 999.99,
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg",
+      "id": 10
     }
   ]
 }

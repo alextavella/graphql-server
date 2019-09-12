@@ -1,7 +1,18 @@
+const { sortBy } = require('lodash');
+
 const resolvers = {
   Query: {
     product: async (_, { id }, { dataSources }, info) => dataSources.productAPI.getById(id),
-    products: async (_, __, { dataSources }, info) => dataSources.productAPI.list(),
+    products: async (_, { orderBy }, { dataSources }) => {
+      const data = await dataSources.productAPI.list();
+
+      if (orderBy) {
+        const [field, direction] = orderBy.split('_');
+        return (direction === 'DESC') ? sortBy(data, field).reverse() : sortBy(data, field);
+      }
+
+      return data;
+    },
   },
   Mutation: {
     addProduct: (_, args, { dataSources }) => dataSources.productAPI.create({ payload: args }),
