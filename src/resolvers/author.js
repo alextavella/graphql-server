@@ -6,10 +6,8 @@ const resolvers = {
     author: async (_, { id }, { dataSources }) => dataSources.authorAPI.getById(id),
   },
   Mutation: {
-    addAuthor: (_, args, { dataSources }) => {
-      console.log(args);
-      return dataSources.authorAPI.create({ payload: args });
-    },
+    addAuthor: (_, args, { dataSources }) => dataSources.authorAPI.create({ payload: args }),
+    updateAuthor: (_, { id, ...payload }, { dataSources }) => dataSources.authorAPI.update(id, { payload }),
     removeAuthor: (_, { id }, { dataSources }) => {
       dataSources.authorAPI.remove(id);
       return { status: 'OK' };

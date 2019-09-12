@@ -19,6 +19,10 @@ class AuthorAPI extends RESTDataSource {
     return this.post('/', payload);
   }
 
+  async update(id, { payload }) {
+    return this.put(`/${id}`, payload);
+  }
+
   async delete(id) {
     return this.delete(`/${id}`);
   }

@@ -1,4 +1,5 @@
 const { ApolloServer } = require('apollo-server');
+const responseCachePlugin = require('apollo-server-plugin-response-cache');
 
 const typeDefs = require('./config/types');
 const context = require('./config/context');
@@ -13,9 +14,10 @@ const server = new ApolloServer({
   dataSources,
   context,
   cache,
-  tracing: true,
+  plugins: [responseCachePlugin()],
+  // tracing: true,
   cacheControl: {
-    defaultMaxAge: 3000,
+    defaultMaxAge: 60,
     stripFormattedExtensions: false,
     calculateCacheControlHeaders: false,
   },

@@ -14,6 +14,19 @@ class ProductAPI extends RESTDataSource {
   async getById(id) {
     return this.get(`/${id}`);
   }
+
+  async create({ payload }) {
+    return this.post('/', payload);
+  }
+
+  async update(id, { payload }) {
+    return this.put(`/${id}`, payload);
+  }
+
+  async remove(id) {
+    await this.delete(`/${id}`);
+    return { status: 'OK' };
+  }
 }
 
 module.exports = ProductAPI;

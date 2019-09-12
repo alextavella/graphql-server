@@ -5,10 +5,9 @@ const resolvers = {
   Stock: {
     product(stock, args, context) {
       // You can to access the variables of context
-      const { user, token, dataSources } = context;
+      const { token, dataSources } = context;
 
-      console.log('user', user);
-      console.log('token', token);
+      // no authenticated
       if (!token) return null;
 
       return dataSources.productAPI.getById(stock.id);

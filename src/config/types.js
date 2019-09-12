@@ -1,27 +1,27 @@
 const { gql } = require('apollo-server');
 
 module.exports = gql`
-  type Book @cacheControl(maxAge: 1000) {
+  type Book @cacheControl(maxAge: 100) {
     id: ID!
     title: String!
     author: [Author]!
   }
 
-  type Author {
+  type Author @cacheControl(maxAge: 100) {
     id: ID!
     name: String!
     books: [Book]!
   }
 
-  type Product @cacheControl(maxAge: 1000) {
+  type Product @cacheControl(maxAge: 50) {
     id: ID!
-    title: String!
+    title: String! @cacheControl(maxAge: 100)
     price: Float!
     image: String
   }
 
   type Stock {
-    product: Product!
+    product: Product
     amount: Int!
   }
 
@@ -48,6 +48,11 @@ module.exports = gql`
     removeBook(id: Int!): Status!
     
     addAuthor(name: String, books: [Int!] = []): Author
+    updateAuthor(id: Int!, name: String!, books: [Int!] = []): Author
     removeAuthor(id: Int!): Status!
+    
+    addProduct(title: String!, price: Float!, image: String): Product
+    updateProduct(id: Int!, title: String!, price: Float!, image: String): Product
+    removeProduct(id: Int!): Status!
   }
 `;
